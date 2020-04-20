@@ -9,7 +9,16 @@ describe 'WeatherForecast API' do
 
     expect(response).to be_successful
 
-    require "pry"; binding.pry
+    data = JSON.parse(response.body, symbolize_names: true)
+
+    current = data[:data][:attributes][:current]
+    hourlies = data[:data][:attributes][:hourlies]
+    dailies = data[:data][:attributes][:dailies]
+
+    expect(hourlies.count).to eq(8)
+    expect(dailies.count).to eq(6)
+    expect(current[:temp].class).to eq(Integer)
+    expect(data[:data][:type]).to eq("location_data")
   end
 
 end
