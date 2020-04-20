@@ -7,34 +7,15 @@ class Api::V1::AntipodeController < ApplicationController
 
     coordinates = original_coordinates(location)
 
-
-
-    #service candidate
-    response = Faraday.get('http://amypode.herokuapp.com/api/v1/antipodes') do |req|
-      req.params['lat'] = "#{coordinates[:lat]}"
-      req.params['long'] = "#{coordinates[:lng]}"
-      req.headers['api_key'] = "#{ENV['AMY_API_KEY']}"
-    end
-
-    antipode_location = JSON.parse(response.body, symbolize_names: true)
+    antipode_location = AmypodeService.new.get_antipode(coordinates[:lat], coordinates[:lng])
 
     antipode_lat = antipode_coordinates(antipode_location)[:lat]
     antipode_long = antipode_coordinates(antipode_location)[:long]
 
-    require "pry"; binding.pry
-
-
-    #service candidate
     antipode_info = GeocodeService.new.get_address(antipode_lat, antipode_long)
 
-
-
     #service candidate
-    response = Faraday.new(url: "https://api.openweathermap.org/data/2.5/onecall?lat=#{antipode_lat}&lon=#{antipode_long}&appid=#{ENV['OPEN_WEATHER_API_KEY']}&units=imperial").post
-
-    antipode_weather = JSON.parse(response.body, symbolize_names: true)
-
-
+    antipode_weather = WeatherService.new.get_weather(antipode_lat, antipode_long)
 
     antipode_params = antipode_params(location, antipode_info)
     @antipode = Antipode.create!(antipode_params)
