@@ -1,32 +1,36 @@
 class AntipodeFacade
 
   def make_antipode(city)
-        location = GeocodeService.new.get_coordinates(city)
+    location = GeocodeService.new.get_coordinates(city)
 
-        coordinates = original_coordinates(location)
+
+    coordinates = original_coordinates(location)
 ###
-        # antipode_location = AmypodeService.new.get_antipode(coordinates[:lat], coordinates[:lng])
-        #
-        # antipode_lat = antipode_coordinates(antipode_location)[:lat]
-        # antipode_long = antipode_coordinates(antipode_location)[:long]
-        #
-        # antipode_info = GeocodeService.new.get_address(antipode_lat, antipode_long)
+    antipode_location = AmypodeService.new.get_antipode(coordinates[:lat], coordinates[:lng])
+
+    antipode_lat = antipode_coordinates(antipode_location)[:lat]
+    antipode_long = antipode_coordinates(antipode_location)[:long]
+
+    antipode_info = GeocodeService.new.get_address(antipode_lat, antipode_long)
+
+# require "pry"; binding.pry
 ###
-        antipode_info = antipode_info(coordinates[:lat], coordinates[:lng])
+    # antipode_info = antipode_info(coordinates[:lat], coordinates[:lng])
 
-        #service candidate
-        antipode_weather = WeatherService.new.get_weather(antipode_lat, antipode_long)
-
+    antipode_weather = WeatherService.new.get_weather(antipode_lat, antipode_long)
 
 
 
-        antipode_params = antipode_params(location, antipode_info)
-        antipode = Antipode.create!(antipode_params)
 
-        forecast_params = forecast_params(antipode_weather, antipode)
-        forecast = Forecast.create(forecast_params)
+    antipode_params = antipode_params(location, antipode_info)
+    antipode = Antipode.create!(antipode_params)
 
-        antipode
+    # antipode = make_antipode(city)
+
+    forecast_params = forecast_params(antipode_weather, antipode)
+    forecast = Forecast.create(forecast_params)
+
+    antipode
   end
 
   private
@@ -51,14 +55,14 @@ class AntipodeFacade
   def antipode_coordinates(info)
     info[:data][:attributes]
   end
-
-  def antipode_info(lat, long)
-    antipode_location = AmypodeService.new.get_antipode(lat, long)
-
-    antipode_lat = antipode_coordinates(antipode_location)[:lat]
-    antipode_long = antipode_coordinates(antipode_location)[:long]
-
-    GeocodeService.new.get_address(antipode_lat, antipode_long)
-  end
+  #
+  # def antipode_info(lat, long)
+  #   antipode_location = AmypodeService.new.get_antipode(lat, long)
+  #
+  #   antipode_lat = antipode_coordinates(antipode_location)[:lat]
+  #   antipode_long = antipode_coordinates(antipode_location)[:long]
+  #
+  #   GeocodeService.new.get_address(antipode_lat, antipode_long)
+  # end
 
 end
