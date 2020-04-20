@@ -10,10 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_20_060916) do
+ActiveRecord::Schema.define(version: 2020_04_20_152818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "antipodes", force: :cascade do |t|
+    t.string "location_name"
+    t.string "search_location"
+  end
 
   create_table "currents", force: :cascade do |t|
     t.integer "temp"
@@ -42,6 +47,13 @@ ActiveRecord::Schema.define(version: 2020_04_20_060916) do
     t.index ["location_data_id"], name: "index_dailies_on_location_data_id"
   end
 
+  create_table "forecasts", force: :cascade do |t|
+    t.string "summary"
+    t.string "current_temperature"
+    t.bigint "antipode_id"
+    t.index ["antipode_id"], name: "index_forecasts_on_antipode_id"
+  end
+
   create_table "hourlies", force: :cascade do |t|
     t.string "time"
     t.integer "temp"
@@ -63,6 +75,7 @@ ActiveRecord::Schema.define(version: 2020_04_20_060916) do
 
   add_foreign_key "currents", "location_data", column: "location_data_id"
   add_foreign_key "dailies", "location_data", column: "location_data_id"
+  add_foreign_key "forecasts", "antipodes"
   add_foreign_key "hourlies", "location_data", column: "location_data_id"
   add_foreign_key "location_data", "currents"
 end

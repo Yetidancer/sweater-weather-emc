@@ -13,7 +13,7 @@ class Api::V1::ForecastController < ApplicationController
     state_name = location[:results].first[:address_components][2][:short_name]
     country_name = location[:results].first[:address_components][3][:long_name]
 
-    response_2 = Faraday.new(url: "https://api.openweathermap.org/data/2.5/onecall?lat=#{coordinates[:lat]}&lon=#{coordinates[:lng]}&appid=#{ENV['OPEN_WEATHER_API_KEY']}").post
+    response_2 = Faraday.new(url: "https://api.openweathermap.org/data/2.5/onecall?lat=#{coordinates[:lat]}&lon=#{coordinates[:lng]}&appid=#{ENV['OPEN_WEATHER_API_KEY']}&units=imperial").post
 
     weather = JSON.parse(response_2.body, symbolize_names: true)
 
