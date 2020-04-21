@@ -7,7 +7,6 @@ class RoadTrip
     @destination = destination
     @travel_time = find_travel_time(directions)
     @arrival_forecast = destination_weather
-    # require "pry"; binding.pry
   end
 
   def find_travel_time(directions)

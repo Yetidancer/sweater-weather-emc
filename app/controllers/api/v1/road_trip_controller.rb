@@ -1,5 +1,4 @@
 class Api::V1::RoadTripController < ApplicationController
-
   def show
     if User.find_by(api_key: params[:api_key])
       road_trip = RoadTrip.new(params[:origin], params[:destination])

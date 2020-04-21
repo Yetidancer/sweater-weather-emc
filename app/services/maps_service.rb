@@ -6,8 +6,11 @@ class MapsService
   end
 
   def get_address_name(lat, long)
-    info = get_address(lat, long)
-    info[:results][1][:address_components].first[:long_name]
+    latlng = "#{lat},#{long}"
+
+    address_info = get_json("/maps/api/geocode/json?key=#{ENV['GOOGLE_API_KEY']}&latlng=#{latlng}")
+
+    address_info[:results][1][:address_components].first[:long_name]
   end
 
   def get_city_name(city)
@@ -15,38 +18,18 @@ class MapsService
   end
 
   def get_coordinates(city)
-    response = coordinates_call(city)
-
-    JSON.parse(response.body, symbolize_names: true)[:results].first
-  end
-
-  def get_address(lat, long)
-    response = address_call(lat, long)
-
-    JSON.parse(response.body, symbolize_names: true)
+    get_json("/maps/api/geocode/json?address=#{city}&key=#{ENV['GOOGLE_API_KEY']}")[:results].first
   end
 
   def get_directions(origin, destination)
-    response = directions_call(origin, destination)
-
-    JSON.parse(response.body, symbolize_names: true)
+    get_json("/maps/api/directions/json?key=#{ENV['GOOGLE_API_KEY']}&origin=#{origin}&destination=#{destination}")
   end
 
   private
 
-  def coordinates_call(city)
-    Faraday.new(url:"https://maps.googleapis.com/maps/api/geocode/json?address=#{city}&key=#{ENV['GOOGLE_API_KEY']}").post
-  end
-
-  def directions_call(origin, destination)
-    response = conn.get("/maps/api/directions/json?key=#{ENV['GOOGLE_API_KEY']}&origin=#{origin}&destination=#{destination}")
-  end
-
-  def address_call(lat, long)
-    response = conn.get('/maps/api/geocode/json') do |req|
-      req.params['latlng'] = "#{lat},#{long}"
-      req.params['key'] = "#{ENV['GOOGLE_API_KEY']}"
-    end
+  def get_json(url)
+    response = conn.get(url)
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   def conn
