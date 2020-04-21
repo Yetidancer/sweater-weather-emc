@@ -7,11 +7,9 @@ describe 'user API' do
     user_params = {email: "cheese@gecko.net", password: "gruyere", password_confirmation: "gruyere"}
 
     post "/api/v1/users", params: user_params
-    # require "pry"; binding.pry
 
     user = User.last
 
-    # require "pry"; binding.pry
     expect(response).to be_successful
 
     expect(response.status).to eq(201)
@@ -29,13 +27,9 @@ describe 'user API' do
 
     post "/api/v1/users", params: user_params
 
-    # expect(response).to be_successful
-
     expect(response.status).to eq(400)
 
     error = JSON.parse(response.body, symbolize_names: true)
-
-    # require "pry"; binding.pry
 
     expect(error.keys.first).to eq(:password_confirmation)
   end
