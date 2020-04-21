@@ -27,9 +27,11 @@ describe 'user API' do
 
     post "/api/v1/sessions", params: user_params
 
-    session = JSON.parse(response.body, symbolize_names: true)
+    bad_request = JSON.parse(response.body, symbolize_names: true)
+
+    # require "pry"; binding.pry
 
     expect(response.status).to eq(400)
-    expect(session[:error]).to eq('Incorrect email or password')
+    expect(bad_request[:error]).to eq('Incorrect email or password')
   end
 end

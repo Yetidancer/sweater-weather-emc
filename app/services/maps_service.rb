@@ -10,6 +10,8 @@ class MapsService
 
     address_info = get_json("/maps/api/geocode/json?key=#{ENV['GOOGLE_API_KEY']}&latlng=#{latlng}")
 
+    return "No region name" if address_info[:results][1].nil?
+
     address_info[:results][1][:address_components].first[:long_name]
   end
 

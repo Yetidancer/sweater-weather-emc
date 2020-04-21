@@ -22,8 +22,12 @@ describe 'user API' do
     expect(user_attributes[:api_key].class).to eq(String)
   end
 
-  it 'can return error if passwords do not match' do
-    user_params = {email: "cheese@gecko.net", password: "gruyere", password_confirmation: "gouda"}
+  it 'can return error if email is taken' do
+    user_params = {email: "cheese@gecko.net", password: "gruyere", password_confirmation: "gruyere"}
+
+    post "/api/v1/users", params: user_params
+
+    user_params = {email: "cheese@gecko.net", password: "gouda", password_confirmation: "gouda"}
 
     post "/api/v1/users", params: user_params
 
@@ -31,6 +35,8 @@ describe 'user API' do
 
     error = JSON.parse(response.body, symbolize_names: true)
 
-    expect(error.keys.first).to eq(:password_confirmation)
+    # require "pry"; binding.pry
+
+    expect(error.keys.first).to eq(:email)
   end
 end

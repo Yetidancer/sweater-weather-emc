@@ -1,5 +1,5 @@
 class Antipode
-  attr_reader :id, :location_name, :search_location, :forecast
+  attr_reader :id, :location_name, :search_location, :forecast, :antipode_coordinates
   def initialize(city_name)
     @id = nil
     @antipode_coordinates = MapsService.new.get_antipode_coordinates(city_name)

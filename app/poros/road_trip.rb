@@ -20,7 +20,7 @@ class RoadTrip
   end
 
   def service_calls(origin, destination)
-    MapsService.new.get_directions(origin, destination)
+    directions = MapsService.new.get_directions(origin, destination)
   end
 
 end
