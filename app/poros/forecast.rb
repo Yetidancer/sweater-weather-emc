@@ -1,11 +1,17 @@
 class Forecast
   attr_reader :id, :location_data, :current, :hourly, :daily
-  def initialize(location_info, weather_info)
+  def initialize(place)
+    # location = GeocodeService.new.get_coordinates(params[:location])
+    #
+    # coordinates = location[:geometry][:location]
+    #
+    # weather = WeatherService.new.get_weather(coordinates[:lat], coordinates[:lng])
+    data = service_calls(place)
     @id = nil
-    @location_data = get_location_data(location_info)
-    @current = current_weather(weather_info)
-    @hourly = hourly_weather(weather_info)
-    @daily = daily_weather(weather_info)
+    @location_data = get_location_data(data[:location])
+    @current = current_weather(data[:weather])
+    @hourly = hourly_weather(data[:weather])
+    @daily = daily_weather(data[:weather])
   end
 
   def get_location_data(location_info)
@@ -34,7 +40,7 @@ class Forecast
         {
           time: Time.at(data[:dt]).to_datetime.strftime("%l %p"),
           temp: data[:temp],
-          icon: data[:weather].first[:icon]
+          weather: data[:weather].first
         }
      }
   end
@@ -46,4 +52,14 @@ class Forecast
       daily
      }
   end
+
+  def service_calls(place)
+    location = GeocodeService.new.get_coordinates(place)
+
+    coordinates = location[:geometry][:location]
+    #
+    # weather = WeatherService.new.get_weather(coordinates[:lat], coordinates[:lng])
+    {location: location, weather: WeatherService.new.get_weather(coordinates[:lat], coordinates[:lng])}
+  end
+
 end

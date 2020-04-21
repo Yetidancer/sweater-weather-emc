@@ -11,7 +11,7 @@ describe 'WeatherForecast API' do
 
     data = JSON.parse(response.body, symbolize_names: true)
 
-    # require "pry"; binding.pry
+    require "pry"; binding.pry
 
     current = data[:data][:attributes][:current]
     hourly = data[:data][:attributes][:hourly]
