@@ -11,15 +11,15 @@ class Antipode
 
   def antipode(city_name)
     coordinates = antipode_coordinates(city_name)
-    GeocodeService.new.get_address_name(coordinates[:lat], coordinates[:long])
+    MapsService.new.get_address_name(coordinates[:lat], coordinates[:long])
   end
 
   def antipode_coordinates(city_name)
-    GeocodeService.new.get_antipode_coordinates(city_name)
+    MapsService.new.get_antipode_coordinates(city_name)
   end
 
   def city(city_name)
-    GeocodeService.new.get_city_name(city_name)
+    MapsService.new.get_city_name(city_name)
   end
 
   def get_antipode_forecast(city_name)

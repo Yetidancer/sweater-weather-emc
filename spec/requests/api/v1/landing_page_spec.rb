@@ -15,9 +15,11 @@ describe 'WeatherForecast API' do
     hourly = data[:data][:attributes][:hourly]
     daily = data[:data][:attributes][:daily]
 
+    # require "pry"; binding.pry
+
     expect(hourly.count).to eq(8)
     expect(daily.count).to eq(5)
-    expect(current[:temp].class).to eq(Float)
+    expect(current[:temp].class).to eq(Float || Integer)
     expect(data[:data][:type]).to eq("forecast")
   end
 

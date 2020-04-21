@@ -49,10 +49,10 @@ class Forecast
   end
 
   def service_calls(place)
-    location = GeocodeService.new.get_coordinates(place)
+    location = MapsService.new.get_coordinates(place)
 
     coordinates = location[:geometry][:location]
-    
+
     {location: location, weather: WeatherService.new.get_weather(coordinates[:lat], coordinates[:lng])}
   end
 
