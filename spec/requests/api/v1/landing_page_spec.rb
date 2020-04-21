@@ -11,14 +11,16 @@ describe 'WeatherForecast API' do
 
     data = JSON.parse(response.body, symbolize_names: true)
 
-    current = data[:data][:attributes][:current]
-    hourlies = data[:data][:attributes][:hourlies]
-    dailies = data[:data][:attributes][:dailies]
+    # require "pry"; binding.pry
 
-    expect(hourlies.count).to eq(8)
-    expect(dailies.count).to eq(6)
-    expect(current[:temp].class).to eq(Integer)
-    expect(data[:data][:type]).to eq("location_data")
+    current = data[:data][:attributes][:current]
+    hourly = data[:data][:attributes][:hourly]
+    daily = data[:data][:attributes][:daily]
+
+    expect(hourly.count).to eq(8)
+    expect(daily.count).to eq(5)
+    expect(current[:temp].class).to eq(Float)
+    expect(data[:data][:type]).to eq("forecast")
   end
 
 end

@@ -14,8 +14,6 @@ class GeocodeService
     get_coordinates(city)[:address_components][0][:long_name]
   end
 
-  private
-
   def get_coordinates(city)
     response = coordinates_call(city)
 
@@ -27,6 +25,8 @@ class GeocodeService
 
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  private
 
   def coordinates_call(city)
     Faraday.new(url:"https://maps.googleapis.com/maps/api/geocode/json?address=#{city}&key=#{ENV['GOOGLE_API_KEY']}").post

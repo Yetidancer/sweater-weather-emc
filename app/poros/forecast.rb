@@ -1,39 +1,35 @@
 class Forecast
-
+  attr_reader :id, :location_data, :current, :hourly, :daily
   def initialize(location_info, weather_info)
-    @location_data = location_data(location_info)
-    @current = current(weather_info)
-    @hourly = hourly(weather_info)
-    @daily = daily(weather_info)
+    @id = nil
+    @location_data = get_location_data(location_info)
+    @current = current_weather(weather_info)
+    @hourly = hourly_weather(weather_info)
+    @daily = daily_weather(weather_info)
   end
 
-  def location_data(location_info)
+  def get_location_data(location_info)
     {
-      latitude: location_info[:results].first[:geometry][:location][:lat],
-      longitude: location_info[:results].first[:geometry][:location][:long],
-      city_name: location_info[:results].first[:address_components][0][:long_name],
-      state_name: location_info[:results].first[:address_components][2][:short_name],
-      country_name: location_info[:results].first[:address_components][3][:long_name]
+      latitude: location_info[:geometry][:location][:lat],
+      longitude: location_info[:geometry][:location][:lng],
+      city_name: location_info[:address_components][0][:long_name],
+      state_name: location_info[:address_components][2][:short_name],
+      country_name: location_info[:address_components][3][:long_name]
     }
   end
 
-  def current(weather_info)
-    {
-      temp: weather_info[:current][:temp],
+  def current_weather(weather_info)
+    weather = weather_info[:current].slice(:temp, :feels_like, :humidity, :visibility, :uvi, :weather)
+    converts = {
+      sunrise: Time.at(weather_info[:current][:sunrise]).to_datetime.strftime("%l:%M %p"),
+      sunset: Time.at(weather_info[:current][:sunset]).to_datetime.strftime("%l:%M %p"),
       high: weather_info[:daily].first[:temp][:max],
       low: weather_info[:daily].first[:temp][:min],
-      description: weather_info[:current][:weather].first[:description],
-      icon: weather_info[:current][:weather].first[:icon],
-      feels_like: weather_info[:current][:feels_like],
-      humidity: weather_info[:current][:humidity],
-      visibility: weather_info[:current][:visibility],
-      uv_index: weather_info[:current][:uvi],
-      sunrise: Time.at(weather_info[:current][:sunrise]).to_datetime.strftime("%l:%M %p"),
-      sunset: Time.at(weather_info[:current][:sunset]).to_datetime.strftime("%l:%M %p")
     }
+    weather.reverse_merge!(converts)
   end
 
-  def hourly(weather_info)
+  def hourly_weather(weather_info)
     weather_info[:hourly].first(8).map { |data|
         {
           time: Time.at(data[:dt]).to_datetime.strftime("%l %p"),
@@ -43,16 +39,11 @@ class Forecast
      }
   end
 
-  def daily(weather_info)
-    weather_info[:daily].first(6).map { |data|
-         {
-           day: Time.at(data[:dt]).to_datetime.strftime("%A"),
-           icon: data[:weather].first[:icon],
-           description: data[:weather].first[:description],
-           precipitation: data[:rain],
-           high: data[:temp][:max],
-           low: data[:temp][:min]
-         }
+  def daily_weather(weather_info)
+    weather_info[:daily][1..5].map { |data|
+      daily = data.slice(:weather, :rain, :snow, :temp)
+      daily[:day] = Time.at(data[:dt]).to_datetime.strftime("%A")
+      daily
      }
   end
 end
