@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe 'background API' do
-
   it 'can return background picture for a city' do
     city = 'denver, co'
 
@@ -14,7 +13,5 @@ describe 'background API' do
     url = data[:data][:attributes][:url]
 
     expect(url.class).to eq(String)
-
   end
-
 end

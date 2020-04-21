@@ -13,9 +13,7 @@ class Forecast
     {
       latitude: location_info[:geometry][:location][:lat],
       longitude: location_info[:geometry][:location][:lng],
-      city_name: location_info[:address_components][0][:long_name],
-      state_name: location_info[:address_components][2][:short_name],
-      country_name: location_info[:address_components][3][:long_name]
+      names: location_info[:address_components].map {|name| name.slice(:short_name)}
     }
   end
 

@@ -1,5 +1,4 @@
 class Background
-
   attr_reader :id, :url
   def initialize(place)
     @id = nil
@@ -10,5 +9,4 @@ class Background
     data = BackgroundService.new.picture_grab(place)
     data[:results].first[:urls][:raw]
   end
-
 end
