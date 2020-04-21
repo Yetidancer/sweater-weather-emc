@@ -1,14 +1,14 @@
 class BackgroundService
 
-  def get_background(location)
-    
+  def picture_grab(location)
+    get_background("search/photos?query=#{location}&client_id=#{ENV['SPLASH_API_KEY']}&per_page=1")
   end
 
   private
 
   def get_background(url)
     response = conn.get(url)
-    json_response = JSON.parse(response.body, symbolize_names: true)
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   def conn
