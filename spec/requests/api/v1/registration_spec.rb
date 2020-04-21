@@ -35,8 +35,6 @@ describe 'user API' do
 
     error = JSON.parse(response.body, symbolize_names: true)
 
-    # require "pry"; binding.pry
-
     expect(error.keys.first).to eq(:email)
   end
 end

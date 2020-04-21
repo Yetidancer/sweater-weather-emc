@@ -1,55 +1,23 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/models/user.rb": {
+      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/services/background_service.rb": {
         "lines": [
           1,
-          1,
-          1,
-          1,
-          1,
           null,
           1,
           1,
-          null
-        ]
-      },
-      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/poros/antipode.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          3,
-          3,
-          3,
-          3,
-          3,
           null,
           null,
           1,
           null,
           1,
-          3,
-          3,
+          1,
+          1,
           null,
           null,
           1,
-          3,
-          null,
-          null,
           1,
-          3,
-          null,
-          3,
-          null,
-          3,
           null,
           null
         ]
@@ -59,58 +27,41 @@
           1,
           null,
           1,
-          3,
-          3,
+          0,
+          0,
           null,
           null,
           1,
-          3,
+          0,
           null,
-          3,
+          0,
           null,
-          3,
+          0,
           null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
           2,
           null,
           null,
           1,
-          3,
-          null,
-          null,
-          1,
-          11,
-          null,
-          null,
-          1,
-          6,
-          null,
-          null,
-          1,
-          null,
-          1,
-          20,
-          20,
-          null,
-          null,
-          1,
-          20,
-          null,
-          null
-        ]
-      },
-      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/services/amypode_service.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          3,
-          3,
-          3,
-          3,
-          null,
-          null,
-          3,
-          null,
+          2,
           null,
           null
         ]
@@ -120,278 +71,19 @@
           1,
           null,
           1,
-          8,
-          null,
-          null,
-          1,
-          null,
-          1,
-          8,
-          8,
-          null,
-          null,
-          1,
-          8,
-          null,
-          null
-        ]
-      },
-      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/poros/background.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          2,
-          2,
-          null,
-          null,
-          1,
-          2,
-          2,
-          null,
-          null
-        ]
-      },
-      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/services/background_service.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          2,
-          null,
-          null,
-          1,
-          null,
-          1,
-          2,
-          2,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null
-        ]
-      },
-      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/poros/forecast.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          5,
-          5,
-          5,
-          5,
-          5,
-          5,
-          null,
-          null,
-          1,
-          5,
-          null,
-          null,
-          24,
-          null,
-          null,
-          null,
-          1,
-          5,
-          5,
-          null,
-          null,
-          null,
-          null,
-          null,
-          5,
-          null,
-          null,
-          1,
-          5,
-          40,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          5,
-          25,
-          25,
-          25,
-          null,
-          null,
-          null,
-          1,
-          5,
-          null,
-          5,
-          null,
-          5,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/poros/road_trip.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null,
-          1,
-          2,
-          2,
-          2,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/controllers/api/v1/antipode_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/serializers/antipode_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/controllers/api/v1/background_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/serializers/background_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/controllers/api/v1/forecast_controller.rb": {
-        "lines": [
-          1,
-          1,
-          2,
-          null,
-          2,
-          null,
-          null
-        ]
-      },
-      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/serializers/forecast_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/controllers/api/v1/users_controller.rb": {
-        "lines": [
-          1,
-          1,
-          8,
-          8,
-          7,
-          null,
           1,
           null,
           null,
-          null,
-          1,
-          null,
           1,
-          8,
           null,
-          null
-        ]
-      },
-      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/serializers/user_serializer.rb": {
-        "lines": [
-          1,
           1,
           1,
-          null
-        ]
-      },
-      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/controllers/api/v1/sessions_controller.rb": {
-        "lines": [
           1,
-          1,
-          5,
-          5,
-          4,
-          null,
-          1,
           null,
           null,
-          null
-        ]
-      },
-      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/controllers/api/v1/road_trip_controller.rb": {
-        "lines": [
-          1,
           1,
-          3,
           1,
-          1,
-          2,
-          1,
-          null,
-          1,
           null,
-          null,
-          null
-        ]
-      },
-      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/serializers/road_trip_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          1,
           null
         ]
       },
@@ -405,9 +97,356 @@
         "branches": {
         }
       },
+      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/models/application_record.rb": {
+        "lines": [
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/models/user.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/serializers/user_serializer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/serializers/background_serializer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/serializers/road_trip_serializer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/serializers/forecast_serializer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/serializers/antipode_serializer.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/poros/background.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/poros/road_trip.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/poros/antipode.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/poros/forecast.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/jobs/application_job.rb": {
         "lines": [
           0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/controllers/application_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/controllers/api/v1/forecast_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/controllers/api/v1/antipode_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/controllers/api/v1/road_trip_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/controllers/api/v1/users_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/controllers/api/v1/sessions_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/controllers/api/v1/background_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/zeke/turing/3module/projects/sweater-weather/sweater_weather_api/app/services/amypode_service.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
           0
         ],
         "branches": {
@@ -434,6 +473,6 @@
         }
       }
     },
-    "timestamp": 1587492244
+    "timestamp": 1587494286
   }
 }

@@ -29,8 +29,6 @@ describe 'user API' do
 
     bad_request = JSON.parse(response.body, symbolize_names: true)
 
-    # require "pry"; binding.pry
-
     expect(response.status).to eq(400)
     expect(bad_request[:error]).to eq('Incorrect email or password')
   end

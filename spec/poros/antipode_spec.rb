@@ -6,8 +6,6 @@ describe 'antipode poro' do
 
     antipode = Antipode.new(place)
 
-    # require "pry"; binding.pry
-
     expect(antipode.antipode_coordinates.count).to eq(2)
 
     expect(antipode.location_name.class).to eq(String)
