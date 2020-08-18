@@ -6,14 +6,14 @@ This API provides endpoints in conjunction with a front-end application designed
 #### Forecast
 `GET 'api/v1/forecast'`
 
-**parameters:** `location`
+*parameters:* `location`
 
 - gets the current, hourly and daily forecast for a certain location.
 
 #### Background Image
 `GET 'api/v1/background'`
 
-**parameters:** `location`
+*parameters:* `location`
 
 - returns image that fits current location and weather.
 
@@ -22,7 +22,7 @@ This API provides endpoints in conjunction with a front-end application designed
 
 - registers a new user using a unique email and password. Returns an API key specific to the user in the response.
 
-**request body:**
+*request body:*
 ```
 {
   email: <user email>
@@ -36,7 +36,7 @@ This API provides endpoints in conjunction with a front-end application designed
 
 - logs a user into a session, authenticating using their password. Response includes user's unique API key.
 
-**request body:**
+*request body:*
 ```
 {
   email: <user email>
@@ -49,7 +49,7 @@ This API provides endpoints in conjunction with a front-end application designed
 
 - provides origin and destination weather and travel time. Requires user API key.
 
-**request body:**
+*request body:*
 ```
 {
   origin: <origin point>
