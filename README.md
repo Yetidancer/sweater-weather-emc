@@ -1,24 +1,75 @@
-# README
+# Sweater Weather
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This API provides endpoints in conjunction with a front-end application designed to plan road trips around origin and destination weather forecasts.
 
-Things you may want to cover:
+## Endpoints:
+#### Forecast
+`GET 'api/v1/forecast'`
 
-* Ruby version
+**parameters:** `location`
 
-* System dependencies
+- gets the current, hourly and daily forecast for a certain location.
 
-* Configuration
+#### Background Image
+`GET 'api/v1/background'`
 
-* Database creation
+**parameters:** `location`
 
-* Database initialization
+- returns image that fits current location and weather.
 
-* How to run the test suite
+#### Register User
+`POST 'api/v1/users'`
 
-* Services (job queues, cache servers, search engines, etc.)
+- registers a new user using a unique email and password. Returns an API key specific to the user in the response.
 
-* Deployment instructions
+**request body:**
+```
+{
+  email: <user email>
+  password: <password>
+  password_confirmation: <password>
+}
+```
 
-* ...
+#### Log In
+`POST 'api/v1/sessions'`
+
+- logs a user into a session, authenticating using their password. Response includes user's unique API key.
+
+**request body:**
+```
+{
+  email: <user email>
+  password: <password>
+}
+```
+
+#### Road Trip
+`POST 'api/v1/road_trip'`
+
+- provides origin and destination weather and travel time. Requires user API key.
+
+**request body:**
+```
+{
+  origin: <origin point>
+  destination: <destination point>
+  api_key: <user api key>
+}
+```
+
+### Requires keys from the below:
+- [Google Maps API](https://developers.google.com/maps/documentation/javascript/get-api-key)
+- [Openweather API](https://openweathermap.org/api/one-call-api)
+- [Unsplash API](https://unsplash.com/developers)
+
+To install, obtain keys from all three of the above, then run ```bundle exec figaro install```, then copy your keys into the ```configs/application.yml``` file:
+
+```
+GOOGLE_API_KEY: <your API key here>
+OPEN_WEATHER_API_KEY: <your API key here>
+SPLASH_API_KEY: <your API key here>
+```
+
+### Creator:
+[Ezekiel Clark](https://github.com/Yetidancer/)
