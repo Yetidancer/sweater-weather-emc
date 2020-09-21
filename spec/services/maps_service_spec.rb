@@ -5,7 +5,7 @@ describe 'maps service' do
     city = 'denver'
 
     coordinates = MapsService.new.get_coordinates(city)
-
+    require "pry"; binding.pry
     expect(coordinates[:address_components].class).to eq(Array)
   end
 

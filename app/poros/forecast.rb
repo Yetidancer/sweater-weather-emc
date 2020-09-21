@@ -3,7 +3,7 @@ class Forecast
   def initialize(place)
     data = service_calls(place)
     @id = nil
-    @location_data = get_location_data(data[:location])
+    @location_data = get_location_data(data[:geometry][:location])
     @current = current_weather(data[:weather])
     @hourly = hourly_weather(data[:weather])
     @daily = daily_weather(data[:weather])
