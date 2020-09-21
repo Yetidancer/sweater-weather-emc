@@ -31,7 +31,7 @@ class Forecast
   def hourly_weather(weather_info)
     weather_info[:hourly].first(8).map { |data|
         {
-          time: Time.at(data[:dt]).to_datetime.strftime("%l %p"),
+          # time: Time.at(data[:dt]).to_datetime.strftime("%l %p"),
           temp: data[:temp],
           weather: data[:weather].first
         }
