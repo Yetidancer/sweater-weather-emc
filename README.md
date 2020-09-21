@@ -22,13 +22,11 @@ This API provides endpoints in conjunction with a front-end application designed
 
 - registers a new user using a unique email and password. Returns an API key specific to the user in the response.
 
-*request body:*
+*parameters:*
 ```
-{
   email: <user email>
   password: <password>
   password_confirmation: <password>
-}
 ```
 
 #### Log In
@@ -36,12 +34,10 @@ This API provides endpoints in conjunction with a front-end application designed
 
 - logs a user into a session, authenticating using their password. Response includes user's unique API key.
 
-*request body:*
+*parameters:*
 ```
-{
   email: <user email>
   password: <password>
-}
 ```
 
 #### Road Trip
@@ -49,13 +45,11 @@ This API provides endpoints in conjunction with a front-end application designed
 
 - provides origin and destination weather and travel time. Requires user API key.
 
-*request body:*
+*parameters:*
 ```
-{
   origin: <origin point>
   destination: <destination point>
   api_key: <user api key>
-}
 ```
 
 ### Requires keys from the below:
