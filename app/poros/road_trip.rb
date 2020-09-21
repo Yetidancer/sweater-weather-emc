@@ -11,6 +11,7 @@ class RoadTrip
 
   def find_travel_time(directions)
     travel_time_hours = directions[:routes].first[:legs].first[:duration][:value].to_f / 3600
+    travel_time_hours.round(2)
   end
 
   def destination_weather
