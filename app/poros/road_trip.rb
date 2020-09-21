@@ -17,6 +17,8 @@ class RoadTrip
   def destination_weather
     hourly_weather_position = @travel_time.round
     hourly_destination_forecast = Forecast.new(@destination).hourly
+    require "pry"; binding.pry
+    return hourly_destination_forecast[7] if hourly_weather_position > hourly_destination_forecast.length
     hourly_destination_forecast[hourly_weather_position]
   end
 
